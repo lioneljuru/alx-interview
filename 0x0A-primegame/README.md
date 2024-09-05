@@ -1,3 +1,5 @@
 # Prime Game
+```
 Algorithm
 Python
+```

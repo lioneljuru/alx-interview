@@ -29,28 +29,28 @@ def isWinner(x, nums):
     If the winner cannot be determined, return None
     You can assume n and x will not be larger than 10000.
     """
-    
+
     players_wins = {"Maria": 0, "Ben": 0}
-    
+
     primes = [0, 0, 2]
-    
+
     calculate_primes(max(nums), primes)
-    
+
     for round in range(x):
         sum_options = sum((i != 0 and i <= nums[round])
                           for i in primes[:nums[round] + 1])
-        
+
         if (sum_options % 2):
             winner = "Maria"
         else:
             winner = "Ben"
-        
+
         if winner:
             players_wins[winner] += 1
-    
+
     if players_wins["Maria"] > players_wins["Ben"]:
         return "Maria"
     elif players_wins["Ben"] > players_wins["Maria"]:
         return "Ben"
-        
-    return None  
+
+    return None
